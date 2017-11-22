@@ -12,7 +12,7 @@ class ScoresTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //add the scores
         $scores = [
             [99, 45],
             [33, 13],
