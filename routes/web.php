@@ -12,9 +12,8 @@
 */
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'ScoreController@index');
+Route::get('/results', 'ScoreController@results');
 
 Route::get('/debug', function () {
 
@@ -42,3 +41,7 @@ Route::get('/debug', function () {
 
     dump($debug);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

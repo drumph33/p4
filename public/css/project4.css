@@ -1,5 +1,5 @@
-legend{
-    font-size: 17px;
+body{
+    background-color: coral;
 }
 .img-responsive{
     margin-left: auto;
@@ -10,7 +10,9 @@ div .img-group{
     margin: 0 auto;
     width: fit-content;
 }
-h5{
-    font-size: 23px;
-    text-align: center;
+h6{
+    font-weight: bolder;
+}
+.panel-body{
+    background-color: beige;
 }
