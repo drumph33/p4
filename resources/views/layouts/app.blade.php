@@ -8,12 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Anxiety and Depression Tracker</title>
+    <title>
+        @yield('title', 'Anxiety and Depression Tracker')
+    </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href='/css/project4.css' type='text/css' rel='stylesheet'>
-    
+
 </head>
 <body>
     <div id="app">

@@ -1,12 +1,12 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('title')
     Anxiety and Depression Surveys
 @endsection
 
 @section('content')
-    <form method='GET' action='/results'>
-        <div class='container'>
+    <div class='container'>
+        <form method='GET' action='/results'>
             <div class='panel-group'>
                 <div class='panel panel-primary'>
                     <div class="panel-heading">
@@ -268,8 +268,6 @@
                     </div>
                 </div>
             </div>
-                        <!-- Form submission buttion -->
-
             <div class='panel panel-primary'>
                 <div class="panel-heading">
                     <h2> Burns Depression Checklist </h2>
@@ -386,3 +384,5 @@
             <div class='form-group'>
                 <input type='submit' class='btn btn-success btn-lg'>
             </div>
+        </div>
+@endsection

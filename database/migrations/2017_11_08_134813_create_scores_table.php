@@ -17,7 +17,7 @@ class CreateScoresTable extends Migration
             $table->increments('id');
             $table->integer('anxiety')->comment('anxiety score');
             $table->integer('depression')->comment('depression score');
-            $table->dateTime('date')->comment('date taken');
+            $table->string('user')->comment('user who filled out form');
             $table->timestamps();
         });
     }
