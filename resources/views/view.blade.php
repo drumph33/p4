@@ -8,16 +8,18 @@
 @section('content')
     <div class='container'>
         <div class='panel-body'>
-            The date this survey was taken:  {{ $scores->created_at }} <br>
-            Anxiety score: {{ $scores->anxiety }}
+            <h3>Date taken:  {{ $scores->created_at }} <br>
+            <br>Anxiety score: {{ $scores->anxiety }}
             <br>
-            Depression score: {{ $scores->depression }}
+            Depression score: {{ $scores->depression }}</h3>
             <br>
-            Influencers: <br>
+            <h4>Influencers: <br>
 
             @foreach ($tagsForThisScore as $id => $name)
-                {{ $name }} <br>
+                <br> {{ $name }}
             @endforeach
+            </h4>
+            <br>
 
             <form method='get' action='/scores'>
                 <input type='submit' value='Back to Scores' class='btn btn-primary btn-small'>

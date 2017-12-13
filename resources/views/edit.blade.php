@@ -20,11 +20,12 @@
     <div class='container'>
         <div class='panel-body'>
             <h3>Would you like to edit the influencers related to this score?</h3> <br>
-            The date this survey was taken:  {{ $scores->created_at }} <br>
-            Anxiety score: {{ $scores->anxiety }}
+            <h4>Date taken:  {{ $scores->created_at }} <br>
+            <br>Anxiety score: {{ $scores->anxiety }}
             <br>
             Depression score: {{ $scores->depression }}
             <br>
+            </h4>
 
             <form method='POST' action='/edit/{{ $scores->id }}'>
                 {{ method_field('put') }}
@@ -38,10 +39,11 @@
                     <input type='number' name='depression' min='0' max='99' id='depression'>
                 </div>
 
-                Influencers: <br>
+                <h4>Influencers: </h4><br>
 
                 @include('tagsCheckbox')
 
+                <br>
                 <div class='form-group'>
                 <input type='submit' value='Edit This Score' class='btn btn-primary btn-small'>
                 </div>

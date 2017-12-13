@@ -7,11 +7,11 @@
 @section('content')
     <div class='container'>
         <div class='panel-body'>
-            Your anxiety score is {{ $data['anxiety'] }}
+            <h3>Anxiety score: {{ $data['anxiety'] }}
             <br>
-            Your depression score is {{ $data['depression'] }}
+            Depression Score is {{ $data['depression'] }}</h3>
             <br>
-            Which of the following do you feel influenced your score on today's survey?
+            <h5>Which of the following do you feel influenced your score on today's survey?</h5>
             <br>
             @include('tagsCheckbox')
 
