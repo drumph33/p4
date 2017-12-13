@@ -14,7 +14,12 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <form method='GET' action='/scores'>
+                        <input type='submit' value='Show my scores' class='btn btn-primary btn-small'>
+                    </form>
+                    <form method='GET' action='/survey'>
+                        <input type='submit' value='Take a survey' class='btn btn-primary btn-small'>
+                    </form>
                 </div>
             </div>
         </div>

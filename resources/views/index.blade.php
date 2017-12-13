@@ -1,8 +1,10 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('title')
     Anxiety and Depression Tracker
 @endsection
 
 @section('content')
-    <h1 class='text-center'>Anxiety and Depression Tracker</h1>
+    <h4>Keep track of your daily anxiety levels by completing a simple survey</h4>
+    <p>Login or Register now to start tracking!</p>
+@endsection

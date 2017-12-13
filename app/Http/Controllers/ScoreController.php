@@ -3,11 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Score;
+use App\Tag;
 
 class ScoreController extends Controller
 {
     //
+
+    private $anxiety = 0;
+    private $depression = 0;
+
     public function index()
+    {
+        $user = Auth::user();
+
+        if ($user) {
+            return view('home');
+        }
+        else{
+            return view('index');
+        }
+    }
+    public function form()
     {
         return view('form');
     }
@@ -227,8 +246,62 @@ class ScoreController extends Controller
                 'depression'=>$dscore
             ];
 
+            $this->anxiety = $ascore;
+            $this->depression = $dscore;
+
+            $tagsForCheckboxes = Tag::getForCheckboxes();
+
             return view('results')->with([
-                'data' => $results
+                'data' => $results,
+                'tagsForCheckbox' => $tagsForCheckboxes
             ]);
         }
+        public function show()
+        {
+            $user = Auth::user();
+            $scores = Score::where('user_id', '=', $user->id)->get();
+
+
+            if (!$scores) {
+                return redirect('/home')->with('alert', 'You do not have any scores!');
+            }
+
+            return view('scores')->with([
+                'scores' => $scores
+            ]);
+        }
+        public function delete($id)
+        {
+            $score = Score::find($id);
+
+            if (!$score) {
+                return redirect('/home')->with('alert', 'Score not found');
+            }
+
+            //$score->tags()->detach();
+
+            $score->tags()->detach();
+
+            $score->delete();
+
+            return redirect('/scores')->with('alert', 'Score was removed.');
+        }
+        public function store(Request $request)
+        {
+
+            # Add new book to the database
+            $score = new Score();
+            $score->anxiety = $this->anxiety;
+            $score->depression = $this->depression;
+            $score->user = $request->user();
+            $score->user_id = $request->user()->id;
+
+
+            $score->save();
+
+            $score->tags()->sync($request->input('tags'));
+
+            return redirect('/home')->with('alert', 'The score was added.');
+        }
+
 }

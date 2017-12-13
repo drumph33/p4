@@ -13,7 +13,12 @@
 
 
 Route::get('/', 'ScoreController@index');
+Route::get('/survey', 'ScoreController@form');
+Route::get('/home', 'ScoreController@index');
 Route::get('/results', 'ScoreController@results');
+Route::get('/scores', 'ScoreController@show');
+Route::post('/store', 'ScoreController@store');
+Route::delete('/delete/{id}', 'ScoreController@delete');
 
 Route::get('/debug', function () {
 
