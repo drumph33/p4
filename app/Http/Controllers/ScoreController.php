@@ -49,6 +49,8 @@ class ScoreController extends Controller
         $results = [];
         $ascore = 0;
         $dscore =0;
+        $alevel = '';
+        $dlevel = '';
 
         $valid = $request->validate([
         'A1' => 'required',
@@ -255,13 +257,47 @@ class ScoreController extends Controller
                     break;
                 }
             }
+
+            if($ascore <= 4){
+                $alevel = 'minimal or no anxiety';
+            }
+            elseif($ascore <= 10){
+                $alevel = 'morderline anxiety';
+            }
+            elseif($ascore <= 20){
+                $alevel = 'mild anxiety';
+            }
+            elseif($ascore <= 30){
+                $alevel = 'moderate anxiety';
+            }
+            elseif($ascore <= 50){
+                $alevel = 'severe anxiety';
+            }else{
+                $alevel = 'extreme anxiety or panic';
+            }
+
+            if($dscore <= 4){
+                $dlevel = 'minimal or no depression';
+            }
+            elseif($dscore <= 10){
+                $dlevel = 'borderline depression';
+            }
+            elseif($dscore <= 20){
+                $dlevel = 'mild depression';
+            }
+            elseif($dscore <= 30){
+                $dlevel = 'moderate depression';
+            }
+            else{
+                $dlevel = 'severe depression';
+            }
+
             $results = [
                 'anxiety'=>$ascore,
-                'depression'=>$dscore
+                'depression'=>$dscore,
+                'alevel'=>$alevel,
+                'dlevel'=>$dlevel
             ];
-
-            $this->anxiety = $ascore;
-            $this->depression = $dscore;
 
             $tagsForCheckboxes = Tag::getForCheckboxes();
 
