@@ -30,6 +30,24 @@ class ScoreController extends Controller
     {
         return view('form');
     }
+    public function view($id)
+    {
+        $score = Score::find($id);
+
+        if (empty($score->toArray())) {
+            return redirect('/home')->with('alert', 'Score not found');
+        }
+
+        $tagsForThisScore = [];
+        foreach ($score->tags as $tag) {
+            $tagsForThisScore[] = $tag->name;
+        }
+
+        return view('view')->with([
+            'scores' => $score,
+            'tagsForThisScore' => $tagsForThisScore
+        ]);
+    }
     public function results(Request $request)
     {
         $results = [];
@@ -259,49 +277,92 @@ class ScoreController extends Controller
         public function show()
         {
             $user = Auth::user();
-            $scores = Score::where('user_id', '=', $user->id)->get();
+            $score = Score::with('tags')->where('user_id', '=', $user->id)->get();
 
+            $tagsForCheckboxes = Tag::getForCheckboxes();
 
-            if (!$scores) {
+            $tagsForThisScore = [];
+            //foreach ($score->tags as $tag) {
+            //    $tagsForThisScore[] = $tag->name;
+            //}
+
+            if (empty($score->toArray())) {
                 return redirect('/home')->with('alert', 'You do not have any scores!');
             }
 
             return view('scores')->with([
-                'scores' => $scores
+                'scores' => $score,
+                'tagsForCheckbox' => $tagsForCheckboxes,
+                'tagsForThisScore' => $tagsForThisScore
+            ]);
+        }
+        public function edit($id)
+        {
+            $score = Score::with('tags')->find($id);
+
+            $tagsForCheckboxes = Tag::getForCheckboxes();
+
+
+            if (empty($score->toArray())) {
+                return redirect('/home')->with('alert', 'Could not find score');
+            }
+
+            $tagsForThisScore = [];
+            foreach ($score->tags as $tag) {
+                $tagsForThisScore[] = $tag->name;
+            }
+
+            return view('edit')->with([
+                'scores' => $score,
+                'tagsForCheckbox' => $tagsForCheckboxes,
+                'tagsForThisScore' => $tagsForThisScore
             ]);
         }
         public function delete($id)
         {
             $score = Score::find($id);
 
-            if (!$score) {
+            if (empty($score->toArray())) {
                 return redirect('/home')->with('alert', 'Score not found');
             }
-
-            //$score->tags()->detach();
 
             $score->tags()->detach();
 
             $score->delete();
 
-            return redirect('/scores')->with('alert', 'Score was removed.');
+            return redirect('/home')->with('alert', 'Score was removed.');
         }
         public function store(Request $request)
         {
-
-            # Add new book to the database
             $score = new Score();
             $score->anxiety = $this->anxiety;
             $score->depression = $this->depression;
             $score->user = $request->user();
             $score->user_id = $request->user()->id;
 
-
             $score->save();
 
             $score->tags()->sync($request->input('tags'));
 
             return redirect('/home')->with('alert', 'The score was added.');
+        }
+        public function update(Request $request, $id)
+        {
+            $this->validate($request, [
+                'anxiety' => 'required|min:0|max:99',
+                'depression' => 'required|min:0|max:45'
+            ]);
+
+            $score = Score::find($id);
+
+            $score->anxiety = $request->input('anxiety');
+            $score->depression = $request->input('depression');
+
+            $score->save();
+
+            $score->tags()->sync($request->input('tags'));
+
+            return redirect('/home')->with('alert', 'The score was updated.');
         }
 
 }

@@ -17,6 +17,8 @@ Route::get('/survey', 'ScoreController@form');
 Route::get('/home', 'ScoreController@index');
 Route::get('/results', 'ScoreController@results');
 Route::get('/scores', 'ScoreController@show');
+Route::get('/edit/{id}', 'ScoreController@edit');
+Route::put('/edit/{id}', 'ScoreController@update');
 Route::post('/store', 'ScoreController@store');
 Route::delete('/delete/{id}', 'ScoreController@delete');
 
