@@ -1,5 +1,5 @@
 body{
-    background-color: coral;
+    background-color: LightSalmon;
 }
 .img-responsive{
     margin-left: auto;
@@ -14,5 +14,11 @@ h6{
     font-weight: bolder;
 }
 .panel-body{
-    background-color: beige;
+    background-color: BlanchedAlmond;
+}
+.navbar-default{
+    background-color: PaleTurquoise;
+}
+.panel-default>.panel-heading {
+    background-color: PaleTurquoise;
 }

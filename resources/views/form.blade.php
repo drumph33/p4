@@ -17,7 +17,7 @@
             <div class='panel-group'>
                 <div class='panel panel-primary'>
                     <div class="panel-heading">
-                        <h2 class='text-center'> Burns Anxiety Inventory
+                        <h2 class='text-center'> Burns Anxiety Inventory</h2>
                     </div>
                     <div class="panel-body">
                         <div class='panel panel-info'>
@@ -274,7 +274,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             <div class='panel panel-primary'>
                 <div class="panel-heading">
                     <h2> Burns Depression Checklist </h2>
@@ -392,4 +391,7 @@
                 <input type='submit' class='btn btn-success btn-lg'>
             </div>
         </div>
+    </form>
+    </div>
+
 @endsection
