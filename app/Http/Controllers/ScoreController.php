@@ -32,7 +32,7 @@ class ScoreController extends Controller
     }
     public function view($id)
     {
-        $score = Score::find($id);
+        $score = Score::with('tags')->find($id);
 
         if (empty($score->toArray())) {
             return redirect('/home')->with('alert', 'Score not found');
@@ -332,11 +332,11 @@ class ScoreController extends Controller
 
             return redirect('/home')->with('alert', 'Score was removed.');
         }
-        public function store(Request $request)
+        public function store(Request $request, $a, $d)
         {
             $score = new Score();
-            $score->anxiety = $this->anxiety;
-            $score->depression = $this->depression;
+            $score->anxiety = $a;
+            $score->depression = $d;
             $score->user = $request->user();
             $score->user_id = $request->user()->id;
 

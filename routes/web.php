@@ -19,7 +19,8 @@ Route::get('/results', 'ScoreController@results');
 Route::get('/scores', 'ScoreController@show');
 Route::get('/edit/{id}', 'ScoreController@edit');
 Route::put('/edit/{id}', 'ScoreController@update');
-Route::post('/store', 'ScoreController@store');
+Route::get('/view/{id}', 'ScoreController@view');
+Route::post('/store/{a}/{d}', 'ScoreController@store');
 Route::delete('/delete/{id}', 'ScoreController@delete');
 
 Route::get('/debug', function () {

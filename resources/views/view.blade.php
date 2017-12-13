@@ -15,7 +15,7 @@
             <br>
             Influencers: <br>
 
-            @foreach ($tagsForCheckbox as $id => $name)
+            @foreach ($tagsForThisScore as $id => $name)
                 {{ $name }} <br>
             @endforeach
 

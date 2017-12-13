@@ -15,7 +15,7 @@
             <br>
             @include('tagsCheckbox')
 
-            <form method='POST' action='/store'>
+            <form method='POST' action='/store/{{$data['anxiety']}}/{{$data['depression']}}'>
                 {{ csrf_field() }}
                 <input type='submit' value='Save Your Score' class='btn btn-primary btn-small'>
             </form>
