@@ -13,15 +13,20 @@
 
 
 Route::get('/', 'ScoreController@index');
-Route::get('/survey', 'ScoreController@form');
-Route::get('/home', 'ScoreController@index');
-Route::get('/results', 'ScoreController@results');
-Route::get('/scores', 'ScoreController@show');
-Route::get('/edit/{id}', 'ScoreController@edit');
-Route::put('/edit/{id}', 'ScoreController@update');
-Route::get('/view/{id}', 'ScoreController@view');
-Route::post('/store/{a}/{d}', 'ScoreController@store');
-Route::delete('/delete/{id}', 'ScoreController@delete');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/survey', 'ScoreController@form');
+    Route::get('/results', 'ScoreController@results');
+    Route::get('/scores', 'ScoreController@show');
+    Route::get('/edit/{id}', 'ScoreController@edit');
+    Route::put('/edit/{id}', 'ScoreController@update');
+    Route::get('/view/{id}', 'ScoreController@view');
+    Route::post('/store/{a}/{d}', 'ScoreController@store');
+    Route::delete('/delete/{id}', 'ScoreController@delete');
+
+});
 
 Route::get('/debug', function () {
 
@@ -51,5 +56,3 @@ Route::get('/debug', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

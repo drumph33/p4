@@ -8,7 +8,7 @@
 @section('content')
     <div class='container'>
         <div class='panel-body'>
-            <h3>Date taken:  {{ $scores->created_at }} <br>
+            <h3>Date taken:  {{ $scores->created_at->format('m-d-y') }} <br>
             <br>Anxiety score: {{ $scores->anxiety }}
             <br>
             Depression score: {{ $scores->depression }}</h3>

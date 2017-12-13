@@ -11,10 +11,6 @@ use App\Tag;
 class ScoreController extends Controller
 {
     //
-
-    private $anxiety = 0;
-    private $depression = 0;
-
     public function index()
     {
         $user = Auth::user();
@@ -282,9 +278,6 @@ class ScoreController extends Controller
             $tagsForCheckboxes = Tag::getForCheckboxes();
 
             $tagsForThisScore = [];
-            //foreach ($score->tags as $tag) {
-            //    $tagsForThisScore[] = $tag->name;
-            //}
 
             if (empty($score->toArray())) {
                 return redirect('/home')->with('alert', 'You do not have any scores!');
@@ -301,7 +294,6 @@ class ScoreController extends Controller
             $score = Score::with('tags')->find($id);
 
             $tagsForCheckboxes = Tag::getForCheckboxes();
-
 
             if (empty($score->toArray())) {
                 return redirect('/home')->with('alert', 'Could not find score');

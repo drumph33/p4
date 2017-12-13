@@ -20,7 +20,7 @@
     <div class='container'>
         <div class='panel-body'>
             <h3>Would you like to edit the influencers related to this score?</h3> <br>
-            <h4>Date taken:  {{ $scores->created_at }} <br>
+            <h4>Date taken:  {{ $scores->created_at->format('m-d-y') }} <br>
             <br>Anxiety score: {{ $scores->anxiety }}
             <br>
             Depression score: {{ $scores->depression }}
