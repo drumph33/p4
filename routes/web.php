@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit/{id}', 'ScoreController@edit');
     Route::put('/edit/{id}', 'ScoreController@update');
     Route::get('/view/{id}', 'ScoreController@view');
-    Route::post('/store/{a}/{d}', 'ScoreController@store');
+    Route::post('/store', 'ScoreController@store');
     Route::delete('/delete/{id}', 'ScoreController@delete');
 
 });

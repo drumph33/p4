@@ -11,10 +11,14 @@
             <h3>Depression Score: {{ $data['depression'] }}</h3><h4>You have {{ $data['dlevel'] }}.</h4>
             <br>
             <h4>Which of the following do you feel influenced your score on today's survey?</h4>
-            <form method='POST' action='/store/{{$data['anxiety']}}/{{$data['depression']}}'>
+            <form method='POST' action='/store'>
                 {{ csrf_field() }}
                 @include('tagsCheckbox')
                 <br>
+                <input name='anxiety' type='hidden' value={{$data['anxiety']}}>
+                <input name='depression' type='hidden' value={{$data['depression']}}>
+                <input name='alevel' type='hidden' value={{$data['alevel']}}>
+                <input name='dlevel' type='hidden' value={{$data['dlevel']}}>
                 <input type='submit' value='Save Your Score' class='btn btn-primary btn-small'>
             </form>
         </div>

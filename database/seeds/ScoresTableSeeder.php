@@ -39,6 +39,8 @@ class ScoresTableSeeder extends Seeder
                 'updated_at' => Carbon\Carbon::now()->subDays($count)->toDateTimeString(),
                 'anxiety' => $score[0],
                 'depression' => $score[1],
+                'alevel' => 'mild',
+                'dlevel' => 'mild',
                 'user' => $score[2],
                 'user_id' => $user_id
             ]);

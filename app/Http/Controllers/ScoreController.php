@@ -80,7 +80,7 @@ class ScoreController extends Controller
             $valid = $request->validate($requiredFields);
 
             // Separate into 2 arrays for anxiety and depression
-            $anxietyScores = array_slice($valid,0,32);
+            $anxietyScores = array_slice($valid,0,33);
             $depressionScores = array_slice($valid,33,47);
 
             // Sum up anxiety scores. Store in $ascore
@@ -195,11 +195,13 @@ class ScoreController extends Controller
 
             return redirect('/home')->with('alert', 'Score was removed.');
         }
-        public function store(Request $request, $a, $d)
+        public function store(Request $request)
         {
             $score = new Score();
-            $score->anxiety = $a;
-            $score->depression = $d;
+            $score->anxiety = $request->input('anxiety');
+            $score->depression = $request->input('depression');
+            $score->alevel = $request->input('alevel');
+            $score->dlevel = $request->input('dlevel');
             $score->user = $request->user();
             $score->user_id = $request->user()->id;
 
@@ -220,6 +222,43 @@ class ScoreController extends Controller
 
             $score->anxiety = $request->input('anxiety');
             $score->depression = $request->input('depression');
+
+            if($request->input('anxiety') <= 4){
+                $alevel = 'minimal or no anxiety';
+            }
+            elseif($request->input('anxiety') <= 10){
+                $alevel = 'morderline anxiety';
+            }
+            elseif($request->input('anxiety') <= 20){
+                $alevel = 'mild anxiety';
+            }
+            elseif($request->input('anxiety') <= 30){
+                $alevel = 'moderate anxiety';
+            }
+            elseif($request->input('anxiety') <= 50){
+                $alevel = 'severe anxiety';
+            }else{
+                $alevel = 'extreme anxiety or panic';
+            }
+
+            if($request->input('depression') <= 4){
+                $dlevel = 'minimal or no depression';
+            }
+            elseif($request->input('depression') <= 10){
+                $dlevel = 'borderline depression';
+            }
+            elseif($request->input('depression') <= 20){
+                $dlevel = 'mild depression';
+            }
+            elseif($request->input('depression') <= 30){
+                $dlevel = 'moderate depression';
+            }
+            else{
+                $dlevel = 'severe depression';
+            }
+                  
+            $score->alevel = $alevel;
+            $score->dlevel = $dlevel;
 
             $score->save();
 
