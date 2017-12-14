@@ -8,11 +8,10 @@
 @section('content')
     <div class='container'>
         <div class='panel-body'>
-            <h3><span class="bold-title">Date taken:</span> {{ $scores->created_at->format('m/d/y') }}</h3>
-            <h3><span class="bold-title">Anxiety score:</span> {{ $scores->anxiety }} ({{ $scores->alevel }})</h3>
-            <h3><span class="bold-title">Depression score:</span> {{ $scores->depression }} ({{ $scores->dlevel }})</h3>
-            <br>
-            <h3 class="bold-title">Influencers:</h3>
+            <h4><span class="bold-title">Date taken:</span> {{ $scores->created_at->format('m/d/y') }}</h4>
+            <h4><span class="bold-title">Anxiety score:</span> {{ $scores->anxiety }} ({{ $scores->alevel }})</h4>
+            <h4><span class="bold-title">Depression score:</span> {{ $scores->depression }} ({{ $scores->dlevel }})</h4>
+            <h4 class="bold-title">Influencers:</h4>
             <ul>
             @foreach ($tagsForThisScore as $id => $name)
                 <li>{{ $name }}</li>

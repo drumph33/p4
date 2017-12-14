@@ -280,111 +280,111 @@
                 </div>
                 <div class="panel-body">
                     <div class='form-group'>
-                        <h6>1. Sadness: </h6><p>Have you been feeling sad or down in the dumps?</p>
+                        <p>1. Sadness: Have you been feeling sad or down in the dumps?</p>
                         <input type='radio' name='D1' value='0'{{ (old('D1') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D1' value='1'{{ (old('D1') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D1' value='2'{{ (old('D1') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D1' value='3'{{ (old('D1') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>2. Discouragement: </h6><p>Does the future look hopeless?</p>
+                        <p>2. Discouragement: Does the future look hopeless?</p>
                         <input type='radio' name='D2' value='0'{{ (old('D2') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D2' value='1'{{ (old('D2') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D2' value='2'{{ (old('D2') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D2' value='3'{{ (old('D2') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>3. Low self-esteem: </h6><p>Do you feel worthless or think of yourself as a failure?</p>
+                        <p>3. Low self-esteem: Do you feel worthless or think of yourself as a failure?</p>
                         <input type='radio' name='D3' value='0'{{ (old('D3') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D3' value='1'{{ (old('D3') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D3' value='2'{{ (old('D3') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D3' value='3'{{ (old('D3') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>4. Inferiority: </h6><p>Do you feel inadequate or inferior to others?</p>
+                        <p>4. Inferiority: Do you feel inadequate or inferior to others?</p>
                         <input type='radio' name='D4' value='0'{{ (old('D4') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D4' value='1'{{ (old('D4') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D4' value='2'{{ (old('D4') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D4' value='3'{{ (old('D4') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>5. Guilt: </h6><p>Do you get self-critical and blame yourself for everything?</p>
+                        <p>5. Guilt: Do you get self-critical and blame yourself for everything?</p>
                         <input type='radio' name='D5' value='0'{{ (old('D5') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D5' value='1'{{ (old('D5') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D5' value='2'{{ (old('D5') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D5' value='3'{{ (old('D5') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>6. Indecisiveness: </h6><p>Do you have trouble making up your mind about things?</p>
+                        <p>6. Indecisiveness: Do you have trouble making up your mind about things?</p>
                         <input type='radio' name='D6' value='0'{{ (old('D6') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D6' value='1'{{ (old('D6') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D6' value='2'{{ (old('D6') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D6' value='3'{{ (old('D6') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>7. Irritability and Frustration: </h6><p>Have you been feeling resentful and angry a good deal of the time?</p>
+                        <p>7. Irritability and Frustration: Have you been feeling resentful and angry a good deal of the time?</p>
                         <input type='radio' name='D7' value='0'{{ (old('D7') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D7' value='1'{{ (old('D7') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D7' value='2'{{ (old('D7') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D7' value='3'{{ (old('D7') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>8. Loss of interest in life: </h6><p>Have you lost interest in your career, your hobbies, your family, or your friends?</p>
+                        <p>8. Loss of interest in life: Have you lost interest in your career, your hobbies, your family, or your friends?</p>
                         <input type='radio' name='D8' value='0'{{ (old('D8') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D8' value='1'{{ (old('D8') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D8' value='2'{{ (old('D8') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D8' value='3'{{ (old('D8') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>9. Loss of motivation: </h6><p>Do you feel overwhelmed and have to push yourself hard to do things?</p>
+                        <p>9. Loss of motivation: Do you feel overwhelmed and have to push yourself hard to do things?</p>
                         <input type='radio' name='D9' value='0'{{ (old('D9') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D9' value='1'{{ (old('D9') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D9' value='2'{{ (old('D9') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D9' value='3'{{ (old('D9') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>10. Poor self-image: </h6><p>Do you think you are looking old or unattractive?</p>
+                        <p>10. Poor self-image: Do you think you are looking old or unattractive?</p>
                         <input type='radio' name='D10' value='0'{{ (old('D10') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D10' value='1'{{ (old('D10') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D10' value='2'{{ (old('D10') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D10' value='3'{{ (old('D10') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>11. Appetite Changes: </h6><p>Have you lost your appetite? Or do you overeat or binge compulsively?</p>
+                        <p>11. Appetite Changes: Have you lost your appetite? Or do you overeat or binge compulsively?</p>
                         <input type='radio' name='D11' value='0'{{ (old('D11') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D11' value='1'{{ (old('D11') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D11' value='2'{{ (old('D11') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D11' value='3'{{ (old('D11') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>12. Sleep changes: </h6><p>Do you suffer from insomnia and find it hard to get a good night's sleep? Or are you excessively tired and sleeping too much?</p>
+                        <p>12. Sleep changes: Do you suffer from insomnia and find it hard to get a good night's sleep? Or are you excessively tired and sleeping too much?</p>
                         <input type='radio' name='D12' value='0'{{ (old('D12') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D12' value='1'{{ (old('D12') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D12' value='2'{{ (old('D12') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D12' value='3'{{ (old('D12') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>13. Loss of libido: </h6><p>Have you lost interest in sex?</p>
+                        <p>13. Loss of libido: Have you lost interest in sex?</p>
                         <input type='radio' name='D13' value='0'{{ (old('D13') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D13' value='1'{{ (old('D13') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D13' value='2'{{ (old('D13') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D13' value='3'{{ (old('D13') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>14. Hypochrondriasis: </h6><p>Do you worry a great deal about your health?</p>
+                        <p>14. Hypochrondriasis: Do you worry a great deal about your health?</p>
                         <input type='radio' name='D14' value='0'{{ (old('D14') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D14' value='1'{{ (old('D14') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D14' value='2'{{ (old('D14') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D14' value='3'{{ (old('D14') == '3') ? 'checked' : '' }}> A lot
                     </div>
                     <div class='form-group'>
-                        <h6>15. Suicidal impulses*: </h6><p>Do you have thoughts that life is not worth living or think that you might be better off dead?</p>
+                        <p>15. Suicidal impulses*: Do you have thoughts that life is not worth living or think that you might be better off dead?</p>
                         <input type='radio' name='D15' value='0'{{ (old('D15') == '0') ? 'checked' : '' }} > Not At All
                         <input type='radio' name='D15' value='1'{{ (old('D15') == '1') ? 'checked' : '' }}> Somewhat
                         <input type='radio' name='D15' value='2'{{ (old('D15') == '2') ? 'checked' : '' }}> Moderately
                         <input type='radio' name='D15' value='3'{{ (old('D15') == '3') ? 'checked' : '' }}> A lot
                     </div>
-                    <h6>*Anyone with suicidal urges should seek immediate consultation with a qualified psyciastrist or psychologist.</h6>
+                    <p>*Anyone with suicidal urges should seek immediate consultation with a qualified psyciastrist or psychologist.</p>
                     <div class='form-group'>
                         <input type='submit' class='btn btn-success btn-lg submit-test'>
                     </div>
