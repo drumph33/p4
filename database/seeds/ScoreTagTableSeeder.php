@@ -15,7 +15,7 @@ class ScoreTagTableSeeder extends Seeder
     {
 
         $scores =[
-            2 => ['diet, family'],
+            2 => ['diet', 'family'],
             3 => ['weekend', 'exercise', 'weather'],
             4 => ['finances', 'alcohol'],
             5 => ['family', 'exercise'],
@@ -31,10 +31,11 @@ class ScoreTagTableSeeder extends Seeder
         # First get the book
         $score = Score::where('id', 'LIKE', $id)->first();
 
+
         # Now loop through each tag for this book, adding the pivot
             foreach ($tags as $tagName) {
                 $tag = Tag::where('name', 'LIKE', $tagName)->first();
-
+                dd($tag);
             # Connect this tag to this book
                 $score->tags()->save($tag);
             }
