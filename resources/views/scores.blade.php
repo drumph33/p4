@@ -7,6 +7,7 @@
 @section('content')
     <div class='container'>
         <div class='panel-body'>
+            <h2 class='text-center'> {{ Auth::user()->name }}'s Survey Results
             @foreach ($scores as $score)
                 <h3>
                     <div><span class="bold-title">Date:</span> {{ $score->created_at->format('m/d/y') }}</div>
