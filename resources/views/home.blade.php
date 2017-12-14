@@ -14,12 +14,16 @@
                         </div>
                     @endif
 
-                    <form method='GET' action='/scores'>
-                        <input type='submit' value='Show my scores' class='btn btn-primary btn-small'>
-                    </form>
+                    <h4>Hello {{ Auth::user()->name }}!</h4>
+                    <p>Click 'Take a survey' to complete an aseessment of your anxiety/depression.</p>
                     <form method='GET' action='/survey'>
-                        <input type='submit' value='Take a survey' class='btn btn-primary btn-small'>
+                        <input type='submit' value='Take a survey' class='btn btn-primary btn-small take-survey'>
                     </form>
+                    <p>Click 'Show my scores' to view the results of previous assessments.</p>
+                    <form method='GET' action='/scores'>
+                        <input type='submit' value='Show my scores' class='btn btn-primary btn-small view-scores'>
+                    </form>
+
                 </div>
             </div>
         </div>

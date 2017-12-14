@@ -1,5 +1,5 @@
 body{
-    background-color: SandyBrown;
+    background-color: LightSalmon;
 }
 .img-responsive{
     margin-left: auto;
@@ -21,4 +21,42 @@ h6{
 }
 .panel-default>.panel-heading {
     background-color: PaleTurquoise;
+}
+.take-survey .view-scores {
+    margin-bottom:20px;
+    width:150px;
+    margin-left:15px;
+}
+.scores-view-button {
+    float:left;
+}
+
+.scores-btn-input {
+    margin-right:5px;
+}
+
+.bold-title {
+    font-weight:bold;
+}
+.tags {
+    margin-left:20px;
+}
+.dep-desc .anx-desc {
+    margin-left:15px;
+}
+.save-btn {
+    width:185px;
+}
+.form-group > h6 {
+    font-weight:bold;
+}
+.form-group > p {
+    font-weight:bold;
+}
+.submit-test {
+    width: 185px;
+    margin-top: 15px;
+}
+.edit-btn {
+    width:185px;
 }

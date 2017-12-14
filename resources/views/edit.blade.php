@@ -20,13 +20,11 @@
     <div class='container'>
         <div class='panel-body'>
             <h3>Would you like to edit the influencers related to this score?</h3> <br>
-            <h4>Date taken:  {{ $scores->created_at->format('m/d/y') }} <br>
-            <br>Anxiety score: {{ $scores->anxiety }} ({{ $scores->alevel }})
+            <h4><span class="bold-title">Date taken:</span>  {{ $scores->created_at->format('m/d/y') }}</h4>
             <br>
-            Depression score: {{ $scores->depression }} ({{ $scores->dlevel }})
+            <h4><span class="bold-title">Anxiety score:</span> {{ $scores->anxiety }} ({{ $scores->alevel }})</h4>
+            <h4><span class="bold-title">Depression score:</span> {{ $scores->depression }} ({{ $scores->dlevel }})</h4>
             <br>
-            </h4>
-
             <form method='POST' action='/edit/{{ $scores->id }}'>
                 {{ method_field('put') }}
                 {{ csrf_field() }}
@@ -38,14 +36,14 @@
                     <label for='depression'> New Depression Score (0-45): </label>
                     <input type='number' name='depression' min='0' max='99' id='depression'>
                 </div>
-
-                <h4>Influencers: </h4><br>
-
-                @include('tagsCheckbox')
-
+                <br>
+                <h5>Influencers:</h5>
+                <div>
+                    @include('tagsCheckbox')
+                </div>
                 <br>
                 <div class='form-group'>
-                <input type='submit' value='Edit This Score' class='btn btn-primary btn-small'>
+                    <input type='submit' value='Edit This Score' class='btn btn-primary btn-small edit-btn'>
                 </div>
             </form>
         </div>

@@ -256,7 +256,7 @@ class ScoreController extends Controller
             else{
                 $dlevel = 'severe depression';
             }
-                  
+
             $score->alevel = $alevel;
             $score->dlevel = $dlevel;
 
